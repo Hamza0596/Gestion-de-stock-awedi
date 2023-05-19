@@ -1,0 +1,40 @@
+<h1>Nouveau sous-assemblage</h1>
+<mat-stepper #stepper>
+  <mat-step
+    [stepControl]="generalInformationsForm"
+    errorMessage="Name is required."
+  >
+    <ng-template matStepLabel>Informations générales</ng-template>
+    <app-general-informations
+      [form]="generalInformationsForm"
+    ></app-general-informations>
+  </mat-step>
+  <mat-step
+    [stepControl]="producationInformationsForm"
+    errorMessage="Address is required."
+  >
+    <ng-template matStepLabel>Données de production</ng-template>
+    <app-production-informations
+      [form]="producationInformationsForm"
+    ></app-production-informations>
+  </mat-step>
+  <mat-step [stepControl]="costInformationsForm">
+    <ng-template matStepLabel>Couts</ng-template>
+    <app-cost-informations
+      [form]="costInformationsForm"
+    ></app-cost-informations>
+    <button
+      (click)="addSubAssembly()"
+      mat-raised-button
+      color="primary"
+      mat-dialog-close
+      [disabled]="
+        !generalInformationsForm.valid ||
+        !producationInformationsForm.valid ||
+        !costInformationsForm.valid
+      "
+    >
+      Ajouter
+    </button>
+  </mat-step>
+</mat-stepper>

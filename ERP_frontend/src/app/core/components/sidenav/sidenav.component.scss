@@ -1,0 +1,55 @@
+mat-sidenav {
+  margin: 16px;
+  width: 300px;
+
+  border-radius: 20px;
+}
+
+mat-expansion-panel {
+  width: 33vh;
+}
+
+mat-panel-title {
+  color: #89abe3ff;
+}
+
+mat-expansion-panel-header {
+  background-color: #fcf6f5ff;
+}
+
+.side-menu {
+  margin-top: 30px;
+  background-color: white;
+  min-height: 25vh;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+mat-sidenav-container {
+  height: 92vh;
+}
+
+.content {
+  padding-top: 25px;
+  margin-left: 32px;
+  border-radius: 20px;
+}
+
+mat-sidenav-content {
+  margin: 16px;
+}
+
+mat-list-item {
+  cursor: pointer;
+}
+
+mat-list-item:hover {
+  background-color: rgb(173, 200, 244);
+  color: white;
+  font-size: large;
+}

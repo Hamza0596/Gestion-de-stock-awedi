@@ -1,0 +1,71 @@
+<form [formGroup]="form">
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Temps de préparation</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Temps de préparation"
+        formControlName="preparationTime"
+      />
+
+      <mat-error
+        *ngIf="this.form.controls['preparationTime'].hasError('required')"
+      >
+        Le temsps de préparation est <strong>obligatoire</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Temps de fabrication</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Temps de fabrication"
+        formControlName="manufacturingTime"
+      />
+
+      <mat-error
+        *ngIf="this.form.controls['manufacturingTime'].hasError('required')"
+      >
+        La temps de fabrication est <strong>obligatoire</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Temps d'attente</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Temps d'attente"
+        formControlName="waitingTime"
+      />
+
+      <mat-error *ngIf="this.form.controls['waitingTime'].hasError('required')">
+        Il faut indiquer le temps de livraison
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombre de ressources</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Nombre de ressources"
+        formControlName="numberOperators"
+      />
+
+      <mat-error
+        *ngIf="this.form.controls['numberOperators'].hasError('required')"
+      >
+        Il faut indiquer le nombre d'opérateurs
+      </mat-error>
+    </mat-form-field>
+  </div>
+</form>

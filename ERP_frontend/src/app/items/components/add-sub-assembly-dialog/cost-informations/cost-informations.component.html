@@ -1,0 +1,37 @@
+<form [formGroup]="form">
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Cout de fabrication</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Cout de fabrication"
+        formControlName="manufacturingCost"
+      />
+
+      <mat-error
+        *ngIf="this.form.controls['manufacturingCost'].hasError('required')"
+      >
+        Le cout de fabrication est <strong>obligatoire</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Cout de livraison</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Temps de livraison"
+        formControlName="deliveryCost"
+      />
+
+      <mat-error
+        *ngIf="this.form.controls['deliveryCost'].hasError('required')"
+      >
+        Il faut indiquer le cout de livraison
+      </mat-error>
+    </mat-form-field>
+  </div>
+</form>

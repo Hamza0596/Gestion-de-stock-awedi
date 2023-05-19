@@ -1,0 +1,12 @@
+<div class="products">
+  <div class="header">
+    <h1>Liste des produits</h1>
+    <mat-icon (click)="openAddProductDialog()">add_circle</mat-icon>
+  </div>
+
+  <app-datatable
+    [dataSource]="products"
+    [columns]="productsColumns"
+    (paginationEvent)="updateProductsOnPagination($event)"
+  ></app-datatable>
+</div>

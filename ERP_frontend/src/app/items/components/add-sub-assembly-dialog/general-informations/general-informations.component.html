@@ -1,0 +1,60 @@
+<form [formGroup]="form">
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Code</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Code du produit"
+        formControlName="code"
+      />
+
+      <mat-error *ngIf="this.form.controls['code'].hasError('required')">
+        Le code est <strong>obligatoire</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Désignation</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Désination du produit"
+        formControlName="designation"
+      />
+
+      <mat-error *ngIf="this.form.controls['designation'].hasError('required')">
+        La désignation est <strong>obligatoire</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Temps de livraison</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Temps de livraison"
+        formControlName="deliveryTime"
+      />
+
+      <mat-error
+        *ngIf="this.form.controls['deliveryTime'].hasError('required')"
+      >
+        Il faut indiquer le temps de livraison
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="category">
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category.code }}: {{ category.designation }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

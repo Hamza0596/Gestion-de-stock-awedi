@@ -1,0 +1,22 @@
+// .numeric-input {
+//
+// }
+
+mat-form-field input {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  text-align: center;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+:host ::ng-deep .mat-form-field-infix {
+  width: 230px;
+}

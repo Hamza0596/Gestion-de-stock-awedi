@@ -1,0 +1,11 @@
+<div class="subAssemblies">
+  <div class="header">
+    <h1>Liste des sous assemblages</h1>
+    <mat-icon (click)="openAddSubAssemblyDialog()">add_circle</mat-icon>
+  </div>
+
+  <app-datatable
+    [dataSource]="subAssemblies"
+    [columns]="subAssembliesColumns"
+  ></app-datatable>
+</div>

@@ -1,0 +1,143 @@
+<section class="vh-100">
+  <div class="container-fluid">
+    <form [formGroup]="registerForm">
+      <h1 class="d-flex justify-content-center pb-4" style="font-size: 2.1rem">
+        <b>Créer un compte</b>
+      </h1>
+
+      <div class="form-outline mb-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nom</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Nom"
+            formControlName="lastName"
+          />
+
+          <mat-error
+            *ngIf="this.registerForm.controls['lastName'].hasError('required')"
+          >
+            Le nom est <strong>obligatoire</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="this.registerForm.controls['lastName'].hasError('minLength')"
+          >
+            Le nom doit comporter au moins 2 caractères
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-outline mb-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Prénom</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Prénom"
+            formControlName="firstName"
+          />
+
+          <mat-error
+            *ngIf="this.registerForm.controls['firstName'].hasError('required')"
+          >
+            Un Prénom est <strong>obligatoire</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="this.registerForm.controls['lastName'].hasError('minLength')"
+          >
+            Le prénom doit comporter au moins 2 caractères
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-outline mb-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="email"
+            formControlName="email"
+          />
+          <mat-error
+            *ngIf="this.registerForm.controls['email'].hasError('email')"
+          >
+            Entrer un email valide
+          </mat-error>
+          <mat-error
+            *ngIf="this.registerForm.controls['email'].hasError('required')"
+          >
+            Email est <strong>obligatoire</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-outline mb-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Téléphone</mat-label>
+          <input
+            type="number"
+            matInput
+            placeholder="Numéro de téléphone"
+            formControlName="phone"
+          />
+
+          <mat-error
+            *ngIf="this.registerForm.controls['phone'].hasError('required')"
+          >
+            Un numéro de téléphone est <strong>obligatoire</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="this.registerForm.controls['phone'].hasError('min')"
+          >
+            Un numéro de téléphone doit comporter 8 digits
+          </mat-error>
+          <mat-error
+            *ngIf="this.registerForm.controls['phone'].hasError('max')"
+          >
+            Un numéro de téléphone doit comporter 8 digits
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-outline mb-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Mot de passe</mat-label>
+          <input
+            type="password"
+            matInput
+            placeholder="Votre mot de passe"
+            formControlName="password"
+          />
+          <mat-error> Entrer un mot de passe valide </mat-error>
+          <mat-error> Mot de passe est <strong>obligatoire</strong> </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-outline mb-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Confirmer mot de passe</mat-label>
+          <input
+            type="password"
+            matInput
+            placeholder="Confirmer votre mot de passe"
+            formControlName="confirmPassword"
+          />
+          <mat-error> Entrer un mot de passe valide </mat-error>
+          <mat-error> Mot de passe est <strong>obligatoire</strong> </mat-error>
+        </mat-form-field>
+      </div>
+      <br />
+      <div class="button">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="registerForm.invalid"
+          (click)="register()"
+        >
+          S'inscrire
+        </button>
+      </div>
+      <br />
+    </form>
+  </div>
+</section>

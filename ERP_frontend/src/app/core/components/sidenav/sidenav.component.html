@@ -1,0 +1,62 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <div class="side-menu">
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel style="margin: 8px">
+          <mat-expansion-panel-header
+            style="font-size: large; font-weight: bold"
+          >
+            <mat-panel-title> Articles </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-divider></mat-divider>
+            <mat-list-item (click)="toProducts()">Produits</mat-list-item>
+
+            <mat-divider></mat-divider>
+            <mat-list-item (click)="toSubAssemblies()"
+              >Sous-assemblages</mat-list-item
+            >
+            <mat-divider></mat-divider>
+            <mat-list-item>Assemblages</mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel style="margin: 8px">
+          <mat-expansion-panel-header
+            style="font-size: large; font-weight: bold"
+          >
+            <mat-panel-title> Clients</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-divider></mat-divider>
+            <mat-list-item>Clients</mat-list-item>
+
+            <mat-divider></mat-divider>
+            <mat-list-item>Commandes clients</mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel style="margin: 8px">
+          <mat-expansion-panel-header
+            style="font-size: large; font-weight: bold"
+          >
+            <mat-panel-title> Fournisseurs</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-divider></mat-divider>
+            <mat-list-item>Fournisseurs</mat-list-item>
+
+            <mat-divider></mat-divider>
+            <mat-list-item>Commandes fournisseurs</mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z4"><router-outlet></router-outlet></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

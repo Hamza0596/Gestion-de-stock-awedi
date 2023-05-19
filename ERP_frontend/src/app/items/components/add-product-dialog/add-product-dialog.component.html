@@ -1,0 +1,119 @@
+<form [formGroup]="addProductForm">
+  <h1>Nouveau produit</h1>
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Code</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Code du produit"
+        formControlName="code"
+      />
+
+      <mat-error
+        *ngIf="this.addProductForm.controls['code'].hasError('required')"
+      >
+        Le code est <strong>obligatoire</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Désignation</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Désination du produit"
+        formControlName="designation"
+      />
+
+      <mat-error
+        *ngIf="this.addProductForm.controls['designation'].hasError('required')"
+      >
+        La désignation est <strong>obligatoire</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Lead time (jours)</mat-label>
+      <input
+        type="number"
+        class="numeric-input"
+        matInput
+        formControlName="leadTime"
+      />
+
+      <mat-error
+        *ngIf="this.addProductForm.controls['leadTime'].hasError('required')"
+      >
+        Le lead time est <strong>obligatoire</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-outline mb-4">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Stock min</mat-label>
+      <input
+        type="number"
+        class="numeric-input"
+        matInput
+        formControlName="stockMin"
+      />
+
+      <mat-error
+        *ngIf="this.addProductForm.controls['stockMin'].hasError('required')"
+      >
+        Le stock Min est <strong>obligatoire</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-outline mb-4">
+    <mat-form-field
+      class="example-full-width"
+      appearance="fill"
+      class="numeric-input"
+    >
+      <mat-label>Prix</mat-label>
+      <input
+        width="400px"
+        type="number"
+        class="numeric-input"
+        matInput
+        formControlName="price"
+      />
+
+      <mat-error
+        *ngIf="this.addProductForm.controls['price'].hasError('required')"
+      >
+        Le prix est <strong>obligatoire</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="category">
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category.code }}: {{ category.designation }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br />
+  <div class="button">
+    <button
+      mat-raised-button
+      color="primary"
+      mat-dialog-close
+      [disabled]="!addProductForm.valid"
+      (click)="addProduct()"
+      type="submit"
+    >
+      Ajouter
+    </button>
+    <button mat-raised-button mat-dialog-close color="disabled">Fermer</button>
+  </div>
+  <br />
+</form>

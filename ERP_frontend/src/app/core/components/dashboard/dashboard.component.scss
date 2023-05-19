@@ -1,0 +1,23 @@
+mat-toolbar {
+  background-color: #89abe3ff;
+  color: #fcf6f5ff;
+}
+
+mat-icon {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+.icons {
+  margin-left: 92%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings-logout-icons {
+  margin-left: 3vh;
+  width: 9vh;
+  display: flex;
+  justify-content: space-between;
+}
